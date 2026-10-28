@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Система студентов</title>
+
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/api.js"></script>
+    <script src="/js/index.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+        <h1>Система студентов</h1>
+        <button type="button" id="logoutButton" class="button button-secondary" style="width:auto;">Выйти</button>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container">
+
+        <section class="students">
+
+            <div class="students-header">
+                <h2>Список студентов</h2>
+
+                <a href="/form.html" class="button button-add">
+                    Добавить студента
+                </a>
+            </div>
+
+            <form id="filtersForm" class="filters" novalidate>
+
+                <div class="form-group">
+                    <label for="filterFullName">ФИО</label>
+                    <input type="text" id="filterFullName" placeholder="Полностью, как в базе">
+                </div>
+
+                <div class="form-group">
+                    <label for="filterGroup">Группа</label>
+                    <input type="text" id="filterGroup" placeholder="M3301">
+                </div>
+
+                <div class="form-group">
+                    <label for="filterIsuId">ИСУ ID</label>
+                    <input type="number" id="filterIsuId" placeholder="123456">
+                </div>
+
+                <div class="form-group">
+                    <label for="filterDormNumber">Общежитие</label>
+                    <input type="number" id="filterDormNumber" placeholder="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="filterRoom">Комната</label>
+                    <input type="number" id="filterRoom" placeholder="500">
+                </div>
+
+                <div class="form-group">
+                    <label for="filterMoveInDate">Дата заселения</label>
+                    <input type="date" id="filterMoveInDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="filterForeigner">Иностранный студент</label>
+                    <select id="filterForeigner">
+                        <option value="">Все</option>
+                        <option value="true">Да</option>
+                        <option value="false">Нет</option>
+                    </select>
+                </div>

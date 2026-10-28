@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Студент — форма</title>
+
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/api.js" defer></script>
+    <script src="/js/form.js" defer></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <h1>Система студентов</h1>
+    </div>
+</header>
+
+<main class="main">
+
+    <div class="container">
+
+        <section class="student-form-section">
+
+            <h2 id="formTitle">Студент</h2>
+
+            <form
+                id="studentForm"
+                class="student-form"
+                novalidate>
+
+                <div class="form-group">
+                    <label for="fullName">ФИО студента</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Иванов Иван Иванович">
+
+                    <span class="field-error" data-error-for="fullName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="group">Группа</label>
+
+                    <input
+                        type="text"
+                        id="group"
+                        name="group"
+                        placeholder="P3210">
+
+                    <span class="field-error" data-error-for="group"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="isuId">ИСУ ID</label>
+
+                    <input
+                        type="number"
+                        id="isuId"
+                        name="isuId"
+                        placeholder="123456">
+
+                    <span class="field-error" data-error-for="isuId"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dormNumber">Номер общежития</label>
+
+                    <input
+                        type="number"
+                        id="dormNumber"
+                        name="dormNumber"
+                        placeholder="8">
+
+                    <span class="field-error" data-error-for="dormNumber"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="room">Комната</label>
+
+                    <input
+                        type="number"
+                        id="room"
+                        name="room"
+                        placeholder="315">
+
+                    <span class="field-error" data-error-for="room"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="moveInDate">Срок заселения</label>
+
+                    <input
+                        type="date"
+                        id="moveInDate"
+                        name="moveInDate"
+                        max="2300-12-31">
+
+                    <span class="field-error" data-error-for="moveInDate"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="isForeigner"
+                        name="isForeigner">
+
+                    <label for="isForeigner">
+                        Иностранный студент
+                    </label>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Заметки</label>
+
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        rows="5"
+                        placeholder="Дополнительная информация"></textarea>
+
+                    <span class="field-error" data-error-for="notes"></span>
+                </div>
+
+                <p id="formMessage" class="message" hidden></p>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="button button-save">
+                        Сохранить
+                    </button>
+
+                    <a href="/index.html" class="button button-secondary">
+                        Отмена
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>Система управления студентами</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

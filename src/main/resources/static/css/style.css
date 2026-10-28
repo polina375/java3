@@ -1,0 +1,442 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* ЦВЕТА */
+    --color-primary: #A63D5B;
+    --color-primary-dark: #762A40;
+    --color-accent: #A9D6E5;
+    --color-bg: #F7F9FA;
+    --color-bg-light: #FCFDFE;
+    --color-text: #332C30;
+    --color-white: #FFFFFF;
+    --color-border-light: #C5D9E0;
+    --color-border-lighter: #DCE8EC;
+    --color-hover-bg: #EAF6FA;
+    --color-secondary-bg: #F3DDE4;
+    --color-shadow: rgba(118, 42, 64, 0.12);
+    --color-focus-shadow: rgba(169, 214, 229, 0.35);
+
+    /* ТИПОГРАФИКА */
+    --font-family-base: Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-sm: 0.875rem;      /* 14px */
+    --font-size-input: 0.9375rem;  /* 15px */
+    --font-size-h1: 1.75rem;       /* 28px */
+
+    /* РАДИУСЫ */
+    --radius-base: 0.75rem;   /* 12px */
+    --radius-sm: 0.4375rem;   /* 7px */
+
+    /* ОТСТУПЫ (шкала) */
+    --space-1: 0.375rem;   /* 6px */
+    --space-2: 0.625rem;   /* 10px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 0.9375rem;  /* 15px */
+    --space-5: 1.125rem;   /* 18px */
+    --space-6: 1.25rem;    /* 20px */
+    --space-7: 1.375rem;   /* 22px */
+    --space-8: 1.5625rem;  /* 25px */
+    --space-9: 1.875rem;   /* 30px */
+
+    /* ГРАНИЦЫ */
+    --border-thin: 0.0625rem;    /* 1px */
+    --border-accent: 0.3125rem;  /* 5px */
+    --border-accent-lg: 0.25rem; /* 4px, используется для нижней границы th */
+    --border-focus: 0.1875rem;   /* 3px */
+
+    /* ПРОЧЕЕ */
+    --transition-base: 0.2s;
+    --container-width: 90%;
+    --container-max-width: 68.75rem; /* 1100px */
+    --min-height-main: 75vh;
+    --detail-label-width: 11.25rem; /* 180px */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.container {
+    width: var(--container-width);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+
+/*  HEADER */
+
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-7) 0;
+    border-bottom: var(--border-accent) solid var(--color-accent);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: var(--font-size-h1);
+}
+
+
+/*  MAIN  */
+
+.main {
+    padding: var(--space-9) 0;
+    min-height: var(--min-height-main);
+}
+
+
+/* ОСНОВНЫЕ БЛОКИ  */
+
+.students,
+.student-form-section,
+.student-card {
+    background-color: var(--color-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-base);
+    border-top: var(--border-accent) solid var(--color-accent);
+    box-shadow: 0 0.25rem 0.9375rem var(--color-shadow);
+}
+
+.students h2,
+.student-form-section h2,
+.student-card h2 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+
+/*  ОБЩИЕ КНОПКИ  */
+
+.button,
+button {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    font-family: var(--font-family-base);
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+
+/*  ДОБАВИТЬ / СОХРАНИТЬ  */
+
+.button-add,
+.button-save {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.button-add:hover,
+.button-save:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-0.0625rem);
+}
+
+
+/*  ВТОРОСТЕПЕННЫЕ КНОПКИ */
+
+.button-secondary {
+    background-color: var(--color-secondary-bg);
+    color: var(--color-primary-dark);
+}
+
+.button-secondary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+
+/*  КНОПКИ В ТАБЛИЦЕ  */
+
+.students-table button {
+    margin: 0.1875rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.students-table button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+
+/*  ТАБЛИЦА  */
+
+.students-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+    border: var(--border-thin) solid var(--color-border-light);
+    padding: var(--space-3);
+    text-align: left;
+}
+
+.students-table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-bottom: var(--border-accent-lg) solid var(--color-accent);
+}
+
+.students-table tbody tr:hover {
+    background-color: var(--color-hover-bg);
+}
+
+
+/* ФОРМА */
+
+.student-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-2);
+    border: 0.125rem solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-input);
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg-light);
+    color: var(--color-text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 var(--border-focus) var(--color-focus-shadow);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* CHECKBOX  */
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    accent-color: var(--color-primary);
+}
+
+
+/*  ДЕЙСТВИЯ ФОРМЫ  */
+
+.form-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+
+/* ДОСЬЕ СТУДЕНТА */
+
+.student-details {
+    margin-top: var(--space-6);
+}
+
+.detail-row {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-3) 0;
+    border-bottom: var(--border-thin) solid var(--color-border-lighter);
+}
+
+.detail-row:hover {
+    background-color: var(--color-hover-bg);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    min-width: var(--detail-label-width);
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.student-actions {
+    margin-top: 1.5625rem;
+}
+
+
+/* FOOTER  */
+
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--space-4) 0;
+    border-top: var(--border-accent) solid var(--color-accent);
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+/* ВЫДЕЛЕНИЕ ТЕКСТА */
+
+::selection {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+
+/*  АДАПТИВНОСТЬ */
+
+@media (max-width: 48em) { /* 768px */
+
+    .container {
+        width: 94%;
+    }
+
+    .header h1 {
+        font-size: 1.375rem; /* 22px */
+    }
+
+    .students-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .students,
+    .student-form-section,
+    .student-card {
+        padding: 1.125rem; /* 18px */
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 0.3125rem; /* 5px */
+    }
+
+    .detail-label {
+        min-width: auto;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .button,
+    button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* ФИЛЬТРЫ */
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: var(--space-4);
+    align-items: end;
+    margin-bottom: var(--space-6);
+    padding: var(--space-5);
+    background-color: var(--color-bg-light);
+    border: var(--border-thin) solid var(--color-border-lighter);
+    border-radius: var(--radius-base);
+}
+
+.filter-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.form-group select {
+    width: 100%;
+    padding: var(--space-2);
+    border: 0.125rem solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-input);
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg-light);
+    color: var(--color-text);
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 var(--border-focus) var(--color-focus-shadow);
+}
+
+
+/* СООБЩЕНИЯ И ОШИБКИ СЕРВЕРА */
+
+.message {
+    margin: 0 0 var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-hover-bg);
+    white-space: pre-line;
+}
+
+.message[hidden] {
+    display: none;
+}
+
+.message-error {
+    background-color: var(--color-secondary-bg);
+    color: var(--color-primary-dark);
+}
+
+.field-error {
+    min-height: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-dark);
+}
+
+.form-group input.input-invalid,
+.form-group textarea.input-invalid {
+    border-color: var(--color-primary);
+}

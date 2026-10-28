@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Досье студента</title>
+
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/api.js" defer></script>
+    <script src="/js/student.js" defer></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <h1>Система студентов</h1>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container">
+
+        <section class="student-card">
+
+            <h2>Досье студента</h2>
+
+            <p id="viewMessage" class="message message-error" hidden></p>
+
+            <div class="student-details" id="studentDetails">
+
+                <div class="detail-row">
+                    <span class="detail-label">ФИО:</span>
+                    <span id="viewFullName"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Группа:</span>
+                    <span id="viewGroup"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">ИСУ ID:</span>
+                    <span id="viewIsuId"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Общежитие:</span>
+                    <span id="viewDormNumber"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Комната:</span>
+                    <span id="viewRoom"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Срок заселения:</span>
+                    <span id="viewMoveInDate"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Иностранный студент:</span>
+                    <span id="viewIsForeigner"></span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Заметки:</span>
+                    <span id="viewNotes"></span>
+                </div>
+
+            </div>
+
+            <div class="student-actions">
+                <a href="/index.html" class="button button-secondary">
+                    ← Назад к списку
+                </a>
+            </div>
+
+        </section>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>Система управления студентами</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
